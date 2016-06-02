@@ -26,13 +26,17 @@
 # Copyright 2016 Brandon Wulf, unless otherwise noted.
 #
 define prtg::sshscript (
-  $script_contents ,
-  $script_output    = 'text',
+  $script_contents = '',
+  $script_source   = '',
+  $script_output   = 'text',
   ) {
   validate_re( $script_output, '^(xml|json|text)$',
     'Invalid $script_output parameter value.')
-  if (size($script_contents) == 0) {
-    fail('$content must be provided.')
+  if (size($script_contents) > 0) and (size($script_source) > 0) {
+      fail('$script_contents and $script_source are mutually exclusive.')
+  }
+  if (size("${script_contents}${script_source}") == 0) {
+    fail('$script_contents or $script_source must be provided.')
   }
 
   $base_directory = '/var/prtg'
@@ -55,9 +59,17 @@ define prtg::sshscript (
   }
 
   $script_filename = "${scripts_directory}/${name}"
-  file{ $script_filename:
-    ensure  => 'file',
-    mode    => '0755',
-    content => $script_contents,
+  if (size($script_contents) > 0) {
+    file{ $script_filename:
+      ensure  => 'file',
+      mode    => '0755',
+      content => $script_contents,
+    }
+  } else {
+    file{ $script_filename:
+      ensure => 'file',
+      mode   => '0755',
+      source => $script_source,
+    }
   }
 }

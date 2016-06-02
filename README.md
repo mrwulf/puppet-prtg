@@ -14,14 +14,18 @@ First, put the script into `<Module>/files`. For this example, the script is cal
 
 ```puppet
 prtg::sshscript{ 'sensor_name':
-  script_contents => 'puppet:///modules/sensor_script.sh',
+  script_source => 'puppet:///modules/<Module>/sensor_script.sh',
   script_output   => 'xml',
 }
 ```
 
 ### Parameters
+
+#### script_source
+Specify a file or template to be the source of the script. It works the same as the file resource's source parameter.
+
 #### script_contents
-Specify the source of the script. You can use the template() function if desired.
+Specify the source of the script as a string. It works the same as the file resource's content parameter.
 
 #### script_output
 Document the type of output from the script. Options are 'xml', 'json', or 'text'. The default is *text*. If you are using the *Advanced* sensor type you should choose between 'xml' and 'json'.
