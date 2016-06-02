@@ -31,4 +31,4 @@ Specify the source of the script as a string. It works the same as the file reso
 Document the type of output from the script. Options are 'xml', 'json', or 'text'. The default is *text*. If you are using the *Advanced* sensor type you should choose between 'xml' and 'json'.
 
 ## Development
-Submit pull requests against [github.com/mrwulf/puppet-prtg].
+Submit pull requests against [https://github.com/mrwulf/puppet-prtg].

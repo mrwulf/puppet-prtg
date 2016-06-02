@@ -1,14 +1,14 @@
 {
   "name": "mrwulf-prtg",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Brandon Wulf",
   "summary": "Deploy custom PRTG monitoring scripts.",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/mrwulf/puppet-prtg",
   "project_page": "https://github.com/mrwulf/puppet-prtg",
   "issues_url": "https://github.com/mrwulf/puppet-prtg/issues",
-  "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ]
+  "operatingsystem_support": [{ "operatingsystem":"RedHat", "operatingsystemrelease":[ "6.0", "7.0" ] }],
+  "tags": ["prtg", "monitoring"],
+  "dependencies": []
 }
 
