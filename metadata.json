@@ -1,7 +1,7 @@
 {
   "name": "mrwulf-prtg",
   "version": "0.1.2",
-  "author": "Brandon Wulf",
+  "author": "mrwulf",
   "summary": "Deploy custom PRTG monitoring scripts.",
   "license": "Apache-2.0",
   "source": "https://github.com/mrwulf/puppet-prtg",
@@ -11,4 +11,3 @@
   "tags": ["prtg", "monitoring"],
   "dependencies": []
 }
-

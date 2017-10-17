@@ -1,4 +1,5 @@
 # prtg
+[![Puppet Forge](https://img.shields.io/puppetforge/v/mrwulf/prtg.svg?style=flat-square)](https://forge.puppet.com/mrwulf/prtg)
 
 #### Table of Contents
 
